@@ -1,0 +1,1 @@
+This is the Svelte frontend code for https://www.ganymede.ch
