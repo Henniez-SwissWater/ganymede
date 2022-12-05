@@ -18,6 +18,8 @@
     "@sveltejs/svelte-scroller": "^2.0.7",
     "help": "^3.0.2",
     "marked": "^4.2.2",
+    "svelte-collapsible": "^0.2.1",
+    "svelte-hamburgers": "^4.0.1",
     "svelte-markdown": "^0.2.3"
   }
 }

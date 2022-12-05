@@ -1,5 +1,6 @@
 <script>
   import Kiswahili from "./kiswahili/kiswahili.svelte";
+  import Brewing from "./brewing/brewing.svelte";
   import Posts from "./posts/posts.svelte";
   import Publications from "./publications/publications.svelte";
   import About from "./about.svelte";
@@ -15,6 +16,8 @@
     <Publications />
   {:else if base == "kiswahili"}
     <Kiswahili />
+  {:else if base == "brewing"}
+    <Brewing />
   {:else if base == "about"}
     <About />
   {/if}

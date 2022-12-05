@@ -32,9 +32,15 @@
     flex-direction: column;
     min-height: 100vh
   }
+  
   #center {
     flex: 1;
     width: 60%;
     margin: auto;
+  }
+  @media only screen and (max-width: 1000px) {
+    #center {
+      width: 90%;
+    }
   }
 </style>

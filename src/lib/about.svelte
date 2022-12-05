@@ -1,5 +1,7 @@
 <div id="about">
-    <img src="me.jpg" alt="Michael Pfeuti" width="25%"/>
+    <div id="picture">
+        <img src="me.jpg" alt="Michael Pfeuti" width="100%" />
+    </div>
     <div id="text">
         <p>My name is Michael Pfeuti.</p>
         <p>
@@ -22,10 +24,31 @@
         display: flex;
         margin-top: 0;
     }
+
+    #picture {
+        flex: 1;
+    }
+
     #text {
+        flex: 4;
         margin-left: 0.8em;
     }
+
     p {
         margin-bottom: 0.8em;
     }
+
+    @media only screen and (max-width: 1000px) {
+        #about {
+            flex-direction: column;
+        }
+        
+        img {
+            width: 25%;
+            margin-left: 0.8em;
+            margin-bottom: 1em;
+            display: block;
+        }
+    }
+
 </style>

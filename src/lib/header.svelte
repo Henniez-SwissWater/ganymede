@@ -25,6 +25,16 @@
         border-bottom-width: 0.1em;
         border-bottom-color: rgb(25, 25, 25);
     }
+    @media only screen and (max-width: 1000px) {
+        header {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
     h1 {
         margin-bottom: 0.1em;
     }
