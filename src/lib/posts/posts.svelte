@@ -2,7 +2,7 @@
   import {
     contextMenuLinks,
     contextMenuTitle,
-    contexMenuSelection
+    contexMenuSelection,
   } from "../stores/contextMenuStore";
   import { getTags, getPagePosts, getPageCount } from "./postsAPI";
   import Post from "./post.svelte";
@@ -23,16 +23,13 @@
 
   contextMenuTitle.set("Post Tags");
   contexMenuSelection.set(tagCurrent);
-  contextMenuLinks.set([]);
-  getTags().then((a) =>
-    a.forEach((element) => {
-      contextMenuLinks.update((list) => [
-        ...list,
-        { label: element, link: "/posts/" + element + "/0" },
-      ]);
-      contextMenuTitle.set("Post Tags");
-    })
-  );
+  getTags().then((a) => {
+    let newlist = [];
+    a.forEach((element) =>
+      newlist.push({ label: element, link: "/posts/" + element + "/0" })
+    );
+    contextMenuLinks.set(newlist);
+  });
 </script>
 
 <div>
@@ -46,7 +43,7 @@
       {#if pageCurrent < pageCount - 1}
         <a href="/posts/{tagCurrent}/{pageCurrent + 1}">&lt&lt Older posts</a>
       {:else}
-      <div/>
+        <div />
       {/if}
       {#if pageCurrent > 0}
         <a href="/posts/{tagCurrent}/{pageCurrent - 1}">Newer posts &gt &gt </a>

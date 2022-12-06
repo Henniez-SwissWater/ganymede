@@ -1,12 +1,13 @@
 <script>
     import { onMount } from "svelte";
-    import { fly } from "svelte/transition";
+    import { tweened } from "svelte/motion";
+    import { cubicOut } from "svelte/easing";
     import { setRandomBorder } from "./utils/brownianBridge.js";
     import { Hamburger } from "svelte-hamburgers";
     const paddingBottom = 5;
     const frayingBottom = 3;
     const steps = 100;
-    let open = true;
+    let open = false;
 
     onMount(() => {
         setRandomBorder(
@@ -18,23 +19,38 @@
             frayingBottom
         );
     });
+
+    const arrowRotation = tweened(1, {
+        duration: 300,
+        easing: cubicOut,
+    });
+
+    function handleBurgerClick() {
+        $arrowRotation = open ? 0 : 90;
+    }
+
+    const menuMovement = tweened(0, {
+        duration: 300,
+        easing: cubicOut,
+    });
+
+    $: $menuMovement = open ? 4.1 : -40;
 </script>
 
-<div id="myNavButton">
-    <Hamburger bind:open type="arrow" />
+<div id="myNavButton" style="transform: rotate({$arrowRotation}deg)">
+    <Hamburger bind:open on:click={handleBurgerClick} type="arrow" />
 </div>
-{#if open}
-    <nav id="myNav" transition:fly={{ y: -200, duration: 1000 }}>
-        <div id="navContent">
-            <a href="/">POSTS</a>
-            <!--a href="/experiments">EXPERIMENTS</a-->
-            <a href="/kiswahili">KISWAHILI</a>
-            <a href="/brewing">BREWING</a>
-            <a href="/publications">PUBLICATIONS</a>
-            <a href="/about">ABOUT</a>
-        </div>
-    </nav>
-{/if}
+
+<nav id="myNav" style="--menuPosition: {$menuMovement}em">
+    <div id="navContent">
+        <a href="/">POSTS</a>
+        <!--a href="/experiments">EXPERIMENTS</a-->
+        <a href="/kiswahili">KISWAHILI</a>
+        <a href="/brewing">BREWING</a>
+        <a href="/publications">PUBLICATIONS</a>
+        <a href="/about">ABOUT</a>
+    </div>
+</nav>
 
 <style>
     nav {
@@ -50,6 +66,8 @@
         font-weight: 500;
         color: black;
         clip-path: var(--ribbon);
+
+        width: fit-content;
     }
 
     a {
@@ -57,6 +75,7 @@
         padding-top: 0.1em;
         padding-bottom: 0.1em;
         transition: all 0.2s ease-in-out;
+
     }
 
     a:hover {
@@ -67,17 +86,18 @@
         display: none;
         position: fixed;
         top: 0;
-        z-index: 1000;
         left: 5%;
+        z-index: 1000;
     }
 
     @media only screen and (max-width: 1000px) {
         #myNavButton {
             display: block;
         }
+
         nav {
-            top: 4.1em;
             left: 5%;
+            transform: translate(0, var(--menuPosition))
         }
     }
 </style>
