@@ -13,30 +13,26 @@
     const frayingBottom = 1;
     const steps = 100;
     let open = false;
-    let links;
-    let refresh = true;
 
+    import { tick } from "svelte";
     contextMenuLinks.subscribe((l) => {
-        refresh = !links || links == l;
-        links = l;
+        tick().then(updateRibbon);
     });
 
-    afterUpdate(() => {
-        if (true) {
-            const nav = document.getElementById("myContextNavRibbon");
-            const content = document.getElementById("contextNavContent");
-            if (nav && content) {
-                setRandomBorder(
-                    nav,
-                    content,
-                    "--ribbon",
-                    steps,
-                    paddingBottom,
-                    frayingBottom
-                );
-            }
+    function updateRibbon() {
+        const nav = document.getElementById("myContextNav");
+        const content = document.getElementById("contextNavContent");
+        if (nav && content) {
+            setRandomBorder(
+                nav,
+                content,
+                "--ribbon",
+                steps,
+                paddingBottom,
+                frayingBottom
+            );
         }
-    });
+    }
 
     const arrowRotation = tweened(1, {
         duration: 300,
@@ -60,24 +56,22 @@
         <Hamburger bind:open on:click={handleBurgerClick} type="arrow-r" />
     </div>
 
-    <div id="myContextNav" >
-        <div id="myContextNavRibbon" style="--menuPosition: {$menuMovement}em">
-            <div id="contextNavContent">
-                <span>{$contextMenuTitle}</span>
-                {#each $contextMenuLinks as { label, link }, i}
-                    {#if $contexMenuSelection == label}
-                        <a href={link} id="contextMenuSelection">{label}</a>
-                    {:else}
-                        <a href={link}>{label}</a>
-                    {/if}
-                {/each}
-            </div>
+    <div id="myContextNav" style="--menuPosition: {$menuMovement}em">
+        <div id="contextNavContent">
+            <span>{$contextMenuTitle}</span>
+            {#each $contextMenuLinks as { label, link }, i}
+                {#if $contexMenuSelection == label}
+                    <a href={link} id="contextMenuSelection">{label}</a>
+                {:else}
+                    <a href={link}>{label}</a>
+                {/if}
+            {/each}
         </div>
     </div>
 {/if}
 
 <style>
-    #myContextNavRibbon {
+    #myContextNav {
         position: fixed;
         top: 0;
         left: 80%;
@@ -115,7 +109,7 @@
         display: none;
         position: fixed;
         top: 0;
-        right: 5%;
+        right: 1%;
         z-index: 1000;
     }
 
@@ -124,10 +118,10 @@
             display: block;
         }
 
-        #myContextNavRibbon {
-            right: 95%;
+        #myContextNav {
+            left:auto;
+            right: 0;
             transform: translate(0, var(--menuPosition));
-            margin-left: 0em;
         }
     }
 </style>

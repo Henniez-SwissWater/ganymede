@@ -1,6 +1,6 @@
 <div id="about">
     <div id="picture">
-        <img src="me.jpg" alt="Michael Pfeuti" width="100%" />
+        <img src="https://files.ganymede.ch/files/images/me.jpg" alt="Michael Pfeuti" width="100%" />
     </div>
     <div id="text">
         <p>My name is Michael Pfeuti.</p>

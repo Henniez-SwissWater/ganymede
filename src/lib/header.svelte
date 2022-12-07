@@ -27,7 +27,8 @@
     }
     @media only screen and (max-width: 1000px) {
         header {
-            width: 90%;
+            left: 0;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;

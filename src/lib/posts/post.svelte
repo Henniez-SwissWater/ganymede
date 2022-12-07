@@ -44,7 +44,7 @@
     font-weight: 500;
   }
 
-  #postHTML :global(img), :global(iframe) {
+  #postHTML :global(img){
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -53,7 +53,7 @@
 
   #postHTML :global(code) {
     background-color: lightgray;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
   }
 
   #postHTML :global(blockquote) {
@@ -62,7 +62,7 @@
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 2em;
-    overflow-x:auto;
+    overflow-x: auto;
   }
 
   #postHTML :global(pre) {
@@ -72,7 +72,7 @@
     padding-bottom: 1em;
     padding-left: 2em;
     background-color: lightgray;
-    font-family: 'Courier New', Courier, monospace;
-    overflow-x:auto;
+    font-family: "Courier New", Courier, monospace;
+    overflow-x: auto;
   }
 </style>

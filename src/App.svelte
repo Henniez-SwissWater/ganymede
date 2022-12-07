@@ -8,11 +8,21 @@
 </script>
 
 <svelte:head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600" rel="stylesheet"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600"
+    rel="stylesheet"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" />
 </svelte:head>
 
 <div id="content">
@@ -30,9 +40,9 @@
   #content {
     display: flex;
     flex-direction: column;
-    min-height: 100vh
+    min-height: 100vh;
   }
-  
+
   #center {
     flex: 1;
     width: 60%;

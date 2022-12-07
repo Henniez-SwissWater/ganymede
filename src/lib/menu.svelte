@@ -62,12 +62,14 @@
         padding: 1em;
         height: 100%;
         background-color: dimgray;
-        text-align: center;
-        font-weight: 500;
+
         color: black;
         clip-path: var(--ribbon);
-
+        
         width: fit-content;
+        
+        text-align: center;
+        font-weight: 500;
     }
 
     a {
@@ -86,7 +88,7 @@
         display: none;
         position: fixed;
         top: 0;
-        left: 5%;
+        left: 1%;
         z-index: 1000;
     }
 
@@ -96,7 +98,7 @@
         }
 
         nav {
-            left: 5%;
+            left: 0;
             transform: translate(0, var(--menuPosition))
         }
     }
