@@ -15,7 +15,7 @@
                 bgColor="dimgray"
             /></a
         >
-        <a href="https://github.com/Henniez-SwissWater">
+        <a href="https://github.com/MichaelPfeuti">
             <SocialIcons network="github" fgColor="black" bgColor="dimgray" /></a
         >
     </div>

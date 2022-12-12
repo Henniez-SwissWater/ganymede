@@ -13,7 +13,7 @@
     let pos = [];
 
     const drawRandomStroke = (i) => {
-        let randAngle = Math.floor(Math.random() * 2 * Math.PI);
+        let randAngle = Math.random() * 2 * Math.PI;
         pos[i][0] += Math.sin(randAngle) * step;
         pos[i][1] += Math.cos(randAngle) * step;
 
