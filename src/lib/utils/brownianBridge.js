@@ -17,13 +17,13 @@ export function computeBrownianBridge(steps) {
     return Z;
 }
 
-export function setRandomBorder(element, content, css_var, steps, paddingBottom, frayingBottom) {
+export function setRandomBorder(element, content, steps, paddingBottom, frayingBottom) {
     const contentBB = content.getBoundingClientRect();
     const bottomBridge = computeBrownianBridge(steps);
 
     const frayingWidth = element.clientWidth;
     const frayingHeight =
-        contentBB.bottom - Math.min(...bottomBridge) * frayingBottom + paddingBottom;
+        contentBB.height - Math.min(...bottomBridge) * frayingBottom + paddingBottom;
 
     // random shape
     let path = "path('";
@@ -42,5 +42,5 @@ export function setRandomBorder(element, content, css_var, steps, paddingBottom,
     path += " L" + frayingWidth + "," + frayingHeight;
     path += " L" + frayingWidth + ",0";
     path += " Z')";
-    element.style.setProperty(css_var, path);
+    return path;
 }

@@ -11,6 +11,22 @@
         gfm: true,
     };
 
+    const renderer = {
+        table(header, body) {
+            if (body) body = `<tbody>${body}</tbody>`;
+
+            return `<div style="overflow-x:auto">
+                <table>
+                <thead>
+                ${header}
+                </thead>
+                ${body}
+                </table>
+                </div>`;
+        },
+    };
+    marked.use({ renderer });
+
     let source = "";
     getMarkup().then((text) => {
         source = marked.parse(text);
@@ -43,7 +59,9 @@
         font-weight: 500;
     }
 
-    div :global(table), :global(th), :global(td) {
+    div :global(table),
+    :global(th),
+    :global(td) {
         border: 1px solid;
         border-collapse: collapse;
         border-color: gray;
@@ -56,15 +74,16 @@
         margin-bottom: 0.5em;
     }
 
-    div :global(th), :global(td){
+    div :global(th),
+    :global(td) {
         padding-top: 0.3em;
         padding-bottom: 0.3em;
         padding-left: 0.5em;
         padding-right: 0.5em;
+        white-space: nowrap;
     }
 
-    div :global(th){
+    div :global(th) {
         background-color: lightgray;
     }
-
 </style>

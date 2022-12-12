@@ -9,10 +9,11 @@
         contextMenuTitle,
         contexMenuSelection,
     } from "./stores/contextMenuStore";
-    const paddingBottom = 15;
+    const paddingBottom = 24;
     const frayingBottom = 1;
     const steps = 100;
     let open = false;
+    let ribbonPath = "";
 
     import { tick } from "svelte";
     contextMenuLinks.subscribe((l) => {
@@ -23,10 +24,9 @@
         const nav = document.getElementById("myContextNav");
         const content = document.getElementById("contextNavContent");
         if (nav && content) {
-            setRandomBorder(
+             ribbonPath = setRandomBorder(
                 nav,
                 content,
-                "--ribbon",
                 steps,
                 paddingBottom,
                 frayingBottom
@@ -48,7 +48,7 @@
         easing: cubicOut,
     });
 
-    $: $menuMovement = open ? 4.1 : -40;
+    $: $menuMovement = open ? 4.1 : -100;
 </script>
 
 {#if $contextMenuLinks.length > 0}
@@ -56,7 +56,7 @@
         <Hamburger bind:open on:click={handleBurgerClick} type="arrow-r" />
     </div>
 
-    <div id="myContextNav" style="--menuPosition: {$menuMovement}em">
+    <div id="myContextNav" style="--menuPosition: {$menuMovement}em; --ribbon: {ribbonPath}">
         <div id="contextNavContent">
             <span>{$contextMenuTitle}</span>
             {#each $contextMenuLinks as { label, link }, i}

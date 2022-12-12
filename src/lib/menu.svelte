@@ -4,16 +4,16 @@
     import { cubicOut } from "svelte/easing";
     import { setRandomBorder } from "./utils/brownianBridge.js";
     import { Hamburger } from "svelte-hamburgers";
-    const paddingBottom = 5;
+    const paddingBottom = 24;
     const frayingBottom = 3;
     const steps = 100;
     let open = false;
+    let ribbonPath; 
 
     onMount(() => {
-        setRandomBorder(
+        ribbonPath = setRandomBorder(
             document.getElementById("myNav"),
             document.getElementById("navContent"),
-            "--ribbon",
             steps,
             paddingBottom,
             frayingBottom
@@ -41,7 +41,7 @@
     <Hamburger bind:open on:click={handleBurgerClick} type="arrow" />
 </div>
 
-<nav id="myNav" style="--menuPosition: {$menuMovement}em">
+<nav id="myNav" style="--menuPosition: {$menuMovement}em; --ribbon: {ribbonPath}">
     <div id="navContent">
         <a href="/">POSTS</a>
         <!--a href="/experiments">EXPERIMENTS</a-->
@@ -99,6 +99,7 @@
 
         nav {
             left: 0;
+            right: auto;
             transform: translate(0, var(--menuPosition))
         }
     }
