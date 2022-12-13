@@ -15,8 +15,14 @@
                 bgColor="dimgray"
             /></a
         >
+        <a href="http://www.xing.com/profile/Michael_Pfeuti2">
+            <img src="/xing.png" alt="xing" width=28 style="transform: translateY(-25%);"/></a
+        >
         <a href="https://github.com/MichaelPfeuti">
             <SocialIcons network="github" fgColor="black" bgColor="dimgray" /></a
+        >
+        <a href="https://git.ganymede.ch" >
+            <img src="/cgit_bw.png" alt="cgit logo" width=40 style="transform: translateY(-50%);"/></a
         >
     </div>
     <div id="copyright">

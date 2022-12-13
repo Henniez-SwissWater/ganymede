@@ -9,7 +9,7 @@
         contextMenuTitle,
         contexMenuSelection,
     } from "./stores/contextMenuStore";
-    const paddingBottom = 24;
+    const paddingBottom = 28;
     const frayingBottom = 1;
     const steps = 100;
     let open = false;

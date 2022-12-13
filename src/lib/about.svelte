@@ -1,6 +1,10 @@
 <div id="about">
     <div id="picture">
-        <img src="https://files.ganymede.ch/files/images/me.jpg" alt="Michael Pfeuti" width="100%" />
+        <img
+            src="https://files.ganymede.ch/files/images/me.jpg"
+            alt="Michael Pfeuti"
+            width="100%"
+        />
     </div>
     <div id="text">
         <p>My name is Michael Pfeuti.</p>
@@ -16,10 +20,24 @@
                 >Swiss Association of Actuaries
             </a> as a fully certified actuary.
         </p>
+
+        <div id="fsf">
+            <a href="http://www.fsf.org/register_form?referrer=9390"
+                ><img
+                    src="https://static.fsf.org/nosvn/associate/crm/170576.png"
+                    alt="[FSF Associate Member]"
+                    width="20%"
+                /></a
+            >
+        </div>
     </div>
 </div>
 
 <style>
+    #fsf {
+        padding:0.8em;
+        text-align: center;
+    }
     #about {
         display: flex;
         margin-top: 0;
@@ -42,7 +60,7 @@
         #about {
             flex-direction: column;
         }
-        
+
         img {
             width: 25%;
             margin-left: 0.8em;
@@ -50,5 +68,4 @@
             display: block;
         }
     }
-
 </style>
