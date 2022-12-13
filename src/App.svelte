@@ -5,6 +5,7 @@
   import Menu from "./lib/menu.svelte";
   import Main from "./lib/main.svelte";
   import ContextMenu from "./lib/contextMenu.svelte";
+  import favicon from './assets/favicon-96x96.png'
 </script>
 
 <svelte:head>
@@ -22,7 +23,7 @@
     rel="stylesheet"
   />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" href={favicon} />
 </svelte:head>
 
 <div id="content">
