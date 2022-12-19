@@ -27,9 +27,7 @@
     };
 
     const addSegment = () => {
-        clear ||=
-            canvas.width != window.innerWidth ||
-            canvas.height != window.innerHeight;
+        clear ||= Math.abs(window.innerWidth*window.innerHeight / (canvas.width*canvas.height) - 1) > 0.2 ;
 
         if (clear) {
             canvas.width = window.innerWidth;
