@@ -1,6 +1,5 @@
 <script>
     import { onMount } from "svelte";
-    import { xlink_attr } from "svelte/internal";
 
     // count must be a square number otherwise it will be rounded up to the next square number
     export let count = 1;
@@ -82,8 +81,8 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         z-index: -100;
     }
 </style>
