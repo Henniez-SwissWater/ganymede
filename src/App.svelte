@@ -24,17 +24,6 @@
   />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href={favicon} />
-  <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$']]
-    }
-  };</script>
-  <script
-    id="MathJax-script"
-    async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
-  ></script>
 </svelte:head>
 
 <div id="content">

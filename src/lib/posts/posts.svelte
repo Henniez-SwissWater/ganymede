@@ -47,6 +47,21 @@
   });
 </script>
 
+<svelte:head>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']]
+      }
+    };</script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+      on:load={mathJaxTypeset}
+    ></script>
+</svelte:head>
+
 <div>
   {#each posts as { title, html, date }, i}
     <Post {title} {date}>
