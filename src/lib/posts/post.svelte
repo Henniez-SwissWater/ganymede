@@ -44,6 +44,11 @@
     font-weight: 500;
   }
 
+  #postHTML :global(p#formula) {
+    text-align: center;
+    padding: 1em;
+  }
+
   #postHTML :global(img){
     display: block;
     margin-left: auto;

@@ -15,8 +15,23 @@
     pageCurrent = parseInt(path[3]);
   }
 
+  let mathJaxRequest;
+  function mathJaxTypeset() {
+    if (MathJax) {
+      if(mathJaxRequest) {
+        mathJaxRequest = mathJaxRequest.then(MathJax.typesetPromise);
+      } else {
+        mathJaxRequest = MathJax.typesetPromise();
+      }
+    }
+  }
+
   let posts = [];
-  getPagePosts(pageCurrent, tagCurrent).then((newPosts) => (posts = newPosts));
+  getPagePosts(pageCurrent, tagCurrent).then((newPosts) => 
+  {
+    posts = newPosts;
+    mathJaxTypeset();
+  });
 
   let pageCount = 1;
   getPageCount(tagCurrent).then((count) => (pageCount = count));

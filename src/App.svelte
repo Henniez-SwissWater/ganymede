@@ -5,7 +5,7 @@
   import Menu from "./lib/menu.svelte";
   import Main from "./lib/main.svelte";
   import ContextMenu from "./lib/contextMenu.svelte";
-  import favicon from './assets/favicon-96x96.png'
+  import favicon from "./assets/favicon-96x96.png";
 </script>
 
 <svelte:head>
@@ -22,8 +22,19 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600"
     rel="stylesheet"
   />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href={favicon} />
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']]
+    }
+  };</script>
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  ></script>
 </svelte:head>
 
 <div id="content">
