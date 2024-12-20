@@ -34,7 +34,10 @@ jobs:
       - name: Build
         run: |
           npm install
-          npm run build     
+          npm run build
+      - name: HACK 404.html -> index.html
+        run: |
+          ln -sr dist/index.html dist/404.html
       - name: Upload build files
         uses: actions/upload-pages-artifact@v3
         with:
