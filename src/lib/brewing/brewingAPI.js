@@ -1,3 +1,3 @@
 export async function getMarkup() {
-    return await fetch("https://ganymede.ch:8000/brewing").then(r => r.json());
+    return await fetch("https://ganymede-api-559716506052.europe-west6.run.app/brewing").then(r => r.json());
 }
