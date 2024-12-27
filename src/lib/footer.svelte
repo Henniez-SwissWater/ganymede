@@ -1,5 +1,4 @@
 <script>
-    import cgit from "../assets/cgit_bw.png";
     import xing from "../assets/xing.png";
     import SocialIcons from "@rodneylab/svelte-social-icons";
     let year = new Date().getFullYear();
@@ -30,14 +29,6 @@
                 network="github"
                 fgColor="black"
                 bgColor="dimgray"
-            /></a
-        >
-        <a href="https://git.ganymede.ch">
-            <img
-                src={cgit}
-                alt="cgit logo"
-                width="40"
-                style="transform: translateY(-50%);"
             /></a
         >
     </div>
