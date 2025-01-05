@@ -12,10 +12,10 @@
     publications.push({
         title: "Twist Triviality of Canonical Seifert Surfaces",
         credit: "Master’s Thesis, Institute of Mathematics, University of Bern, February 2015",
-        resources: `<a href="/src/public/MasterMath.pdf"
+        resources: `<a href="/publications/MasterMath.pdf"
         >pdf</a
     >,
-    <a href="/src/public/MasterMath_slides.pdf"
+    <a href="/publications/MasterMath_slides.pdf"
         >slides</a
     >`,
     });
@@ -24,21 +24,21 @@
         title: "Real-time Rendering of Refractive Objects in Participating Media",
         credit: "Master’s Thesis, Institute of Computer Science and Applied Mathematics, University of Bern, December 2009",
         resources: `<a
-        href="/src/public/MasterCS.pdf">pdf</a
+        href="/publications/MasterCS.pdf">pdf</a
     >,
-    <a href="/src/public/MasterCS_slides1.pdf"
+    <a href="/publications/MasterCS_slides1.pdf"
         >slides1</a
     >,
-    <a href="/src/public/MasterCS_slides2.pdf"
+    <a href="/publications/MasterCS_slides2.pdf"
         >slides2</a
     >,
-    <a href="/src/public/MasterCS_adaptive.avi"
+    <a href="/publications/MasterCS_adaptive.avi"
         >adaptive_video</a
     >,
-    <a href="/src/public/MasterCS_reference.avi"
+    <a href="/publications/MasterCS_reference.avi"
         >reference_video</a
     >,
-    <a href="/src/public/MasterCS_timing.avi"
+    <a href="/publications/MasterCS_timing.avi"
         >timing_video</a
     >`,
     });
@@ -46,10 +46,10 @@
     publications.push({
         title: "The Logic of Justified Belief",
         credit: "Bachelor’s Thesis, Institute of Computer Science and Applied Mathematics, University of Bern, December 2008",
-        resources: `<a href="/src/public/BachelorMath.pdf"
+        resources: `<a href="/publications/BachelorMath.pdf"
         >pdf</a
     >,
-    <a href="/src/public/BachelorMath_slides.pdf"
+    <a href="/publications/BachelorMath_slides.pdf"
         >slides</a
     >`,
     });
@@ -57,10 +57,10 @@
     publications.push({
         title: "Stochastic Ray Tracing",
         credit: "Bachelor’s Thesis, Institute of Computer Science and Applied Mathematics, University of Bern, January 2007",
-        resources: `<a href="/src/public/BachelorCS.pdf"
+        resources: `<a href="/publications/BachelorCS.pdf"
         >pdf</a
     >,
-    <a href="/src/public/BachelorCS_slides.pdf"
+    <a href="/publications/BachelorCS_slides.pdf"
         >slides</a
     >`,
     });
