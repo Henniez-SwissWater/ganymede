@@ -1,7 +1,11 @@
+<script>
+    import me from "../assets/me.jpg";
+</script>
+
 <div id="about">
     <div id="picture">
         <img
-            src="https://files.ganymede.ch/files/images/me.jpg"
+            src={me}
             alt="Michael Pfeuti"
             width="100%"
         />
